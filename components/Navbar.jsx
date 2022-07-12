@@ -13,7 +13,7 @@ const Navbar = () => {
             <div className='flex justify-start lg:w-0 lg:flex-1'>
               <Link href='/'>
                 
-                < >
+                <a >
                 <Image
                   className='h-8 w-auto sm:h-10 cursor-pointer'
                   src={Logo}
@@ -21,7 +21,7 @@ const Navbar = () => {
                   width={270}
                   height={48}
                 />
-               </>
+               </a>
               </Link>
             </div>
           </div>
