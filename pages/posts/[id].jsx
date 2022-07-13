@@ -1,8 +1,8 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Moment from 'moment';
-import Image from 'next/image';
 import Head from 'next/head';
+
 export const getStaticPaths = async () => {
   const res = await fetch(
     'https://beta.mejorconsalud.com/wp-json/mc/v3/posts?orderby=date&order=desc'
@@ -33,11 +33,22 @@ export const getStaticProps = async ({ params }) => {
 };
 
 function PagePost({ post }) {
+  const imageThumbnail =
+    post.featured_media === null
+      ? '/no_images.png'
+      : post.featured_media.medium_large;
   return (
     <>
       <Head>
-        <title> {`${post.metas.title} - Carlos BOYZO OREGON`}</title>
+        <title>
+          Carlos BOYZO OREGON
+          {post.metas.title}
+        </title>
         <meta name='description' content={post.metas.description} />
+        <meta property='og:title' content='The Rock' />
+        <meta property='og:type' content={post.metas.description} />
+        <meta property='og:url' content='/sss' />
+        <meta property='og:image' content={post.metas.image} />
       </Head>
       <div>
         <Navbar />
@@ -48,7 +59,7 @@ function PagePost({ post }) {
             </h1>
             <picture>
               <img
-                src={post.featured_media.medium_large}
+                src={imageThumbnail}
                 alt={post.slug}
                 className='rounded-lg w-full h-100'
               />

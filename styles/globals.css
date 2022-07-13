@@ -3,7 +3,10 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css?family=Poppins:400');
 
-html {font-size: 100%;} /*16px*/
+html {
+  font-size: 100%;
+  box-sizing: content-box;
+} /*16px*/
 
 body {
   background: white;
@@ -11,11 +14,18 @@ body {
   font-weight: 400;
   line-height: 1.75;
   color: #000000;
+  box-sizing: border-box;
 }
 
-p {margin-bottom: 1rem;}
+p {
+  margin-bottom: 1rem;
+}
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 3rem 0 1.38rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -27,15 +37,26 @@ h1 {
   font-size: 1rem;
 }
 
-h2 {font-size: 2.074rem;}
+h2 {
+  font-size: 2.074rem;
+}
 
-h3 {font-size: 1rem;}
+h3 {
+  font-size: 1rem;
+}
 
-h4 {font-size: 1.44rem;}
+h4 {
+  font-size: 1.44rem;
+}
 
-h5 {font-size: 1.2rem;}
+h5 {
+  font-size: 1.2rem;
+}
 
-small, .text_small {font-size: 0.833rem;}
+small,
+.text_small {
+  font-size: 0.833rem;
+}
 
 html,
 body {
@@ -72,8 +93,8 @@ a {
   max-width: 1080px;
 }
 .titulos {
-  transform: translateY(-100%);
-  background-color:#fa93c7;
+  transform: translateY(-35%);
+  background-color: #fa93c7;
   color: white;
   text-align: center;
   font-size: 2rem;
@@ -84,4 +105,22 @@ a {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 1rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-flow: column;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #fa93c7;
+  text-align: center;
 }
